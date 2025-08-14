@@ -1,0 +1,162 @@
+:root {
+    /* Final "Elegant Dark" Theme Palette */
+    --bg-color: #0d0c1d; /* Deep Indigo */
+    --primary-glow: #8a2be2; /* Blue Violet */
+    --secondary-glow: #4f46e5; /* Indigo */
+    --text-light: #e5e7eb;
+    --text-muted: #9ca3af;
+    --card-bg: rgba(24, 24, 48, 0.4);
+    --card-border: rgba(138, 43, 226, 0.3);
+    --card-shadow: rgba(79, 70, 229, 0.2);
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    background-color: var(--bg-color);
+    background-image: radial-gradient(ellipse at center, rgba(79, 70, 229, 0.15) 0%, transparent 60%);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+main { 
+    z-index: 1; 
+    position: relative;
+    min-height: calc(100vh - 150px); /* Adjust if footer height is different */
+    padding-top: 80px; /* Offset for fixed navbar */
+}
+
+/* --- Main Content Card Style --- */
+.content-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 30px var(--card-shadow);
+    transition: all 0.3s ease;
+}
+.content-card:hover {
+    border-color: rgba(138, 43, 226, 0.7);
+    box-shadow: 0 8px 40px var(--card-shadow);
+}
+
+/* --- Form & Button Styles --- */
+.form-control, .form-control:focus {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--card-border);
+    color: var(--text-light);
+    border-radius: 8px;
+    padding: .75rem 1rem;
+}
+.form-control:focus { box-shadow: 0 0 10px var(--primary-glow); border-color: var(--primary-glow); }
+.form-label { font-weight: 500; }
+.btn-futuristic {
+    background: linear-gradient(90deg, var(--secondary-glow), var(--primary-glow));
+    color: var(--text-light);
+    border: none;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 20px var(--card-shadow);
+}
+.btn-futuristic:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 30px var(--card-shadow);
+}
+
+/* --- General Text & Headings --- */
+h1, h2, h3, h4, h5 { font-weight: 700; }
+.text-muted { color: var(--text-muted) !important; }
+
+/* --- Navbar Styles --- */
+.navbar {
+    background: var(--card-bg) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--card-border) !important;
+    z-index: 9990;
+}
+.navbar .navbar-brand { text-shadow: 0 0 5px var(--primary-glow); }
+.navbar .nav-link { font-weight: 500; transition: all 0.3s ease; }
+.navbar .nav-link:hover, .navbar .nav-link.active {
+    color: var(--primary-glow) !important;
+    text-shadow: 0 0 10px var(--primary-glow);
+}
+.navbar .dropdown-menu {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+.navbar .dropdown-item { color: var(--text-light); transition: all 0.3s ease; }
+.navbar .dropdown-item:hover { background-color: var(--primary-glow); color: var(--bg-color); }
+
+/* --- Footer Styles --- */
+footer {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid var(--card-border);
+    color: var(--text-muted);
+}
+footer h5 { color: var(--text-light); text-shadow: 0 0 5px var(--secondary-glow); }
+footer a { color: var(--text-muted); text-decoration: none; transition: all 0.3s ease; }
+footer a:hover { color: var(--primary-glow); text-shadow: 0 0 10px var(--primary-glow); }
+footer .social-btn {
+    color: var(--text-muted);
+    border: 1px solid var(--text-muted);
+    width: 40px; height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+footer .social-btn:hover {
+    color: var(--bg-color);
+    background: var(--primary-glow);
+    border-color: var(--primary-glow);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* --- Styles for Interactive Feature Filter --- */
+.feature-filter-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--card-border);
+    color: var(--text-muted);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: var(--card-bg);
+    color: var(--text-light);
+    border-color: var(--primary-glow);
+}
+
+.filter-btn.active {
+    background: var(--primary-glow);
+    color: var(--bg-color);
+    border-color: var(--primary-glow);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
